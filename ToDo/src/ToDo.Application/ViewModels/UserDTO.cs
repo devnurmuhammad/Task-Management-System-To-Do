@@ -1,4 +1,4 @@
-﻿namespace ToDo.Web.ViewModels
+﻿namespace ToDo.Application.ViewModels
 {
     public class UserDTO
     {

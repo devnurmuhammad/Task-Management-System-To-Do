@@ -18,8 +18,8 @@ namespace ToDo.Application.UseCases.Users.Handlers
         {
             User user = new User()
             {
-                UserName = request.UserName,
-                Password = request.Password,
+                UserName = request.UserDto.UserName,
+                Password = request.UserDto.Password
             };
 
             await _context.Users.AddAsync(user);

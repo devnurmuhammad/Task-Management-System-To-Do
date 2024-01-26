@@ -2,8 +2,8 @@
 using Microsoft.AspNetCore.Mvc;
 using ToDo.Application.UseCases.Users.Commands;
 using ToDo.Application.UseCases.Users.Queries;
+using ToDo.Application.ViewModels;
 using ToDo.Domain.Entities;
-using ToDo.Web.ViewModels;
 
 namespace ToDo.Web.Controllers
 {
@@ -12,7 +12,6 @@ namespace ToDo.Web.Controllers
     public class UserController : ControllerBase
     {
         private readonly IMediator _mediator;
-
         public UserController(IMediator mediator)
         {
             _mediator = mediator;
@@ -30,8 +29,7 @@ namespace ToDo.Web.Controllers
         {
             var user = new CreateUserCommand()
             {
-                UserName = userDTO.UserName,
-                Password = userDTO.Password,
+                UserDto = userDTO,
             };
             await _mediator.Send(user);
             return Ok("Created");
