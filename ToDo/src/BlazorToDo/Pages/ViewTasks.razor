@@ -1,0 +1,64 @@
+﻿@page "/todos"
+@using BlazorToDo.Entities
+@using BlazorToDo.Service
+@inject HttpClient Http
+@inject ToDoService apiservice
+
+
+<h1>TaskToDo</h1>
+
+@if (apiservice.tasks == null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+    <table class="table table-striped align-middle table-bordered">
+        <thead class="table-success">
+            <tr>
+                <th>TaskName</th>
+                <th>Definition</th>
+                <th>CreatedAt</th>
+                <th>Deadline</th>
+                <th>Progres</th>
+                <th>Buttons</th> 
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var task in apiservice.tasks)
+            {
+                string link1 = $"/update/{task.Id}";
+                <tr>
+                    <td>@task.TaskName</td>
+                    <td>@task.Definition</td>
+                    <td>@task.CreatedAt</td>
+                    <td>@task.Deadline</td>
+                    <td>@task.Progress</td>
+                    <td>
+                        <a href=@link1 class="btn btn-outline-dark" role="button">
+                            Edit
+                        </a>
+                        
+                        <button type="button"
+                                class="btn btn-danger"
+                                @onclick="@(async () => await Delete(@task.Id))">
+                            Delete
+                        </button>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+@code {
+    protected override async Task OnInitializedAsync()
+    {
+        await apiservice.GetAllTask();
+    }
+
+    protected async Task Delete(int id)
+    {
+        await apiservice.DeleteTask(id);
+    }
+}
