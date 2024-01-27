@@ -21,7 +21,7 @@ else
                 <th>CreatedAt</th>
                 <th>Deadline</th>
                 <th>Progres</th>
-                <th>Buttons</th> 
+                <th>Actions</th> 
             </tr>
         </thead>
         <tbody>
@@ -41,8 +41,7 @@ else
                         
                         <button type="button"
                                 class="btn btn-danger"
-                                @onclick="@(async () => await Delete(@task.Id))">
-                            Delete
+                                @onclick="@(async () => await Delete(@task.Id))">Delete
                         </button>
                     </td>
                 </tr>
@@ -50,10 +49,10 @@ else
         </tbody>
     </table>
 }
-
 <button type="button" class="btn btn-primary"><a style="color:whitesmoke" href="/addtask">Add Task</a></button>
+
 @code {
-    // str
+    
     protected override async Task OnInitializedAsync()
     {
         await apiservice.GetAllTask();
@@ -63,5 +62,4 @@ else
     {
         await apiservice.DeleteTask(id);
     }
-    
 }

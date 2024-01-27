@@ -20,6 +20,7 @@ namespace ToDo.Application.UseCases.TodoTasks.Handlers
                TaskName = request.TaskDto.TaskName,
                Definition = request.TaskDto.Definition,
                Deadline = request.TaskDto.Deadline,
+               Progress = Domain.Enums.IsProgress.ToDo
             };
             await _context.Tasks.AddAsync(task);
             await _context.SaveChangesAsync(cancellationToken);
