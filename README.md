@@ -7,4 +7,5 @@ Resume [Resume 2 (1).pdf](https://github.com/devnurmuhammad/Task-Management-Syst
 
 
 Backend - CQRS da qilindi, oldin Blazor'ni bilmaganim uchun backend'ga ko'p e'tibor qarata olmadim,
+
 Frontend - Blazor Server App, componentalarga ajratib qilishga harakat qildim.
