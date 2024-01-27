@@ -1,5 +1,4 @@
-﻿using System.ComponentModel.DataAnnotations.Schema;
-using ToDo.Domain.Enums;
+﻿using ToDo.Domain.Enums;
 
 namespace ToDo.Domain.Entities
 {
@@ -11,8 +10,6 @@ namespace ToDo.Domain.Entities
         public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
         public DateTime Deadline { get; set; }
         public IsProgress Progress { get; set; } = IsProgress.ToDo;
-        public int UserId { get; set; }
-        [ForeignKey(nameof(UserId))]
-        public User? Users { get; set; }
+
     }
 }
