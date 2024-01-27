@@ -1,5 +1,4 @@
 ﻿using BlazorToDo.Enums;
-using System.ComponentModel.DataAnnotations.Schema;
 
 namespace BlazorToDo.Entities
 {
@@ -10,9 +9,18 @@ namespace BlazorToDo.Entities
         public string? Definition { get; set; }
         public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
         public DateTime Deadline { get; set; }
-        public IsProgress Progress { get; set; } = IsProgress.ToDo;
-        public int UserId { get; set; }
-        [ForeignKey(nameof(UserId))]
-        public User? Users { get; set; }
+        private IsProgress progress { get; set; }
+        public int Progress
+        {
+            get
+            {
+                return (int)progress;
+            }
+            set
+            {
+                progress = (IsProgress)value;
+
+            }
+        }
     }
 }
