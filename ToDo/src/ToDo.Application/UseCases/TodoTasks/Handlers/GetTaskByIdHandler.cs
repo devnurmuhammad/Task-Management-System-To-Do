@@ -16,7 +16,7 @@ namespace ToDo.Application.UseCases.TodoTasks.Handlers
         }
         public async Task<TodoTask> Handle(GetTaskByIdQuery request, CancellationToken cancellationToken)
         {
-            TodoTask? task = await _context.Tasks.Include(x => x.Users).FirstOrDefaultAsync(x => x.Id == request.Id);
+            TodoTask? task = await _context.Tasks.FirstOrDefaultAsync(x => x.Id == request.Id);
             if (task == null)
             {
                 return new TodoTask();

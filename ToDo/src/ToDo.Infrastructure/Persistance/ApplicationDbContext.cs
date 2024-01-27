@@ -8,7 +8,6 @@ namespace ToDo.Infrastructure.Persistance
     {
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options) { }
         
-        public DbSet<User> Users { get; set; }
         public DbSet<TodoTask> Tasks { get; set; }
     }
 }

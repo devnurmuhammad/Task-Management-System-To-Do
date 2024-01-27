@@ -5,7 +5,6 @@ namespace ToDo.Application.Abstractions
 {
     public interface IToDoApplicationDbContext
     {
-        public DbSet<User> Users { get; set; }
         public DbSet<TodoTask> Tasks { get; set; }
 
         public Task<int> SaveChangesAsync(CancellationToken cancellationToken = default);
