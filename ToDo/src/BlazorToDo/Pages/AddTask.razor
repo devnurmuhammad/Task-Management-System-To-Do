@@ -5,7 +5,7 @@
 @inject ToDoService apiservice
 @inject NavigationManager Navigation
 
-<!-- Add new task form -->
+
 <div>
     <h3>Add New Task</h3>
     <EditForm Model="@newTask" OnSubmit="@AddNewTask">
@@ -21,21 +21,24 @@
             <label for="deadline">Deadline:</label>
             <input type="datetime-local" class="form-control" id="deadline" @bind="newTask.Deadline" required />
         </div>
+        @* <div class="form-group">
+            <label for="deadline">Progress:</label>
+            <input type="number" class="form-control" id="progress" @bind="newTask.Progress" required />
+        </div> *@
+
         <button type="submit" class="btn btn-primary">Add Task</button>
     </EditForm>
 </div>
 
-@if (apiservice.tasks == null)
+@* @if (apiservice.tasks == null)
 {
     <p><em>Loading...</em></p>
 }
 else
 {
-    <!-- Existing task table -->
     <table class="table table-striped align-middle table-bordered">
-        <!-- ... (same as your existing code) ... -->
     </table>
-}
+} *@
 
 
 @code {
