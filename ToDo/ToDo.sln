@@ -13,7 +13,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ToDo.Infrastructure", "src\
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ToDo.Application", "src\ToDo.Application\ToDo.Application.csproj", "{CDC2E5D3-A563-4E50-BA90-53D40BE2A284}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazorToDo", "src\BlazorToDo\BlazorToDo.csproj", "{0D9A6746-4933-4F0C-818B-F1BF8B7E4752}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazorToDo", "src\BlazorToDo\BlazorToDo.csproj", "{0D9A6746-4933-4F0C-818B-F1BF8B7E4752}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
