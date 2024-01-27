@@ -16,7 +16,7 @@ namespace ToDo.Application.UseCases.TodoTasks.Handlers
         }
         public async Task<IList<TodoTask>> Handle(GetAllTasksQuery request, CancellationToken cancellationToken)
         {
-            IList<TodoTask> tasks = await _context.Tasks.Include(x => x.Users).ToListAsync(cancellationToken);
+            IList<TodoTask> tasks = await _context.Tasks.ToListAsync(cancellationToken);
             return tasks;
         }
     }

@@ -20,7 +20,6 @@ namespace ToDo.Application.UseCases.TodoTasks.Handlers
                TaskName = request.TaskDto.TaskName,
                Definition = request.TaskDto.Definition,
                Deadline = request.TaskDto.Deadline,
-               UserId = request.TaskDto.UserId,
             };
             await _context.Tasks.AddAsync(task);
             await _context.SaveChangesAsync(cancellationToken);

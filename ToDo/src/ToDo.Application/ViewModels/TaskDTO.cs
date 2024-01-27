@@ -7,7 +7,6 @@ namespace ToDo.Application.ViewModels
         public string TaskName { get; set; } = default!;
         public string? Definition { get; set; }
         public DateTime Deadline { get; set; }
-        public IsProgress Progress { get; set; } = IsProgress.ToDo;
-        public int UserId { get; set; }
+        public IsProgress? Progress { get; set; } = IsProgress.ToDo;
     }
 }
